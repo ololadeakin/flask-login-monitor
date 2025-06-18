@@ -1,0 +1,17 @@
+### Valid login
+POST http://127.0.0.1:5000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password123"
+}
+
+### Invalid login
+POST https://flask-login-demo-gbc7aue7cta0dpgh.canadacentral-01.azurewebsites.net/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "wrongpassword"
+}

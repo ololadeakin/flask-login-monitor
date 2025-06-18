@@ -10,9 +10,10 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def login():
-    username = request.form.get('username')
-    password = request.form.get('password')
-    
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    print(data, username, password)
     if username == 'admin' and password == 'password123':
         app.logger.info(f"Successful login attempt by user: {username}")
         return 'Login Successful', 200
